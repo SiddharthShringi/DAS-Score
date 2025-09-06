@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { questions } from "@/lib/questions";
 import { Button } from "@/components/ui/button";
+import RadioButtons from "@/components/RadioButtons";
 
 export default function Quiz() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -23,8 +24,8 @@ export default function Quiz() {
 
   return (
     <div className="min-h-screen flex items-center justify-center ">
-      <section className="w-full mx-auto px-6 py-20 sm:py-28 bg-gradient-to-b from-background to-muted rounded-lg border border-accent">
-        <div className="max-w-xl w-full h-[300px] mx-auto p-6 space-y-6 text-center flex flex-col">
+      <section className="w-full px-6 py-6 sm:py-10 bg-gradient-to-b from-background to-muted rounded-lg border border-accent flex">
+        <div className="max-w-xl w-full h-[300px] mx-auto p-6 text-center flex flex-col">
           <p className="text-sm text-muted-foreground">
             Question {currentIndex + 1} of {questions.length}
           </p>
@@ -34,6 +35,8 @@ export default function Quiz() {
               {currentQuestion.text}
             </h2>
           </div>
+
+          <RadioButtons />
 
           {/* Navigation */}
           <div className="flex justify-center gap-4 mt-6">
