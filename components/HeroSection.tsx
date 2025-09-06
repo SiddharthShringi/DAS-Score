@@ -28,17 +28,21 @@ export default function HeroSection() {
 
           {/* CTA */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="group cursor-pointer">
-              Take the Test
-              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="group cursor-pointer"
-            >
-              <Link href="/About">Learn More</Link>
-            </Button>
+            <Link href="/das-test">
+              <Button size="lg" className="group cursor-pointer">
+                Take the Test
+                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </Button>
+            </Link>
+            <Link href="/about">
+              <Button
+                size="lg"
+                variant="outline"
+                className="group cursor-pointer"
+              >
+                Learn More
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
