@@ -1,4 +1,3 @@
-// components/AboutSection.tsx
 import { BookOpen, Target, Lightbulb } from "lucide-react";
 
 export default function AboutSection() {
@@ -67,7 +66,7 @@ export default function AboutSection() {
           <ul className="grid sm:grid-cols-2 gap-4 text-muted-foreground">
             <li>
               <strong>Approval:</strong> Positive → self-trusting. Negative →
-              dependent on others’ validation.
+              dependent on others validation.
             </li>
             <li>
               <strong>Achievement:</strong> Positive → growth-focused. Negative
@@ -75,7 +74,7 @@ export default function AboutSection() {
             </li>
             <li>
               <strong>Love:</strong> Positive → feels lovable as is. Negative →
-              “I’m only worthy if loved.”
+              “I&apos;m only worthy if loved.”
             </li>
             <li>
               <strong>Omnipotence:</strong> Positive → accepts limits. Negative
@@ -87,7 +86,7 @@ export default function AboutSection() {
             </li>
             <li>
               <strong>Entitlement:</strong> Positive → balanced expectations.
-              Negative → rigid beliefs about what’s “owed.”
+              Negative → rigid beliefs about what&apos;s “owed.”
             </li>
             <li>
               <strong>Perfectionism:</strong> Positive → values effort. Negative
