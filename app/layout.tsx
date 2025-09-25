@@ -28,12 +28,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
+        <ThemeProvider attribute="class" forcedTheme="dark">
           <div className="container mx-auto overflow-hidden">{children}</div>
         </ThemeProvider>
       </body>

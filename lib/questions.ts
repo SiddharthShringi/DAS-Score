@@ -1,4 +1,4 @@
-interface Question {
+export interface Question {
   id: number;
   text: string;
   category: string;
@@ -190,31 +190,66 @@ export const questions: Question[] = [
   },
   {
     id: 2,
+    text: "I often need others approval to feel okay about myself.",
+    category: "Approval",
+  },
+  {
+    id: 3,
     text: "I feel guilty when I put my needs before others needs.",
     category: "Love",
   },
   {
-    id: 3,
+    id: 4,
+    text: "I feel guilty when I put my needs before others needs.",
+    category: "Love",
+  },
+  {
+    id: 5,
     text: "I have high standards for myself and feel like I must be perfect.",
     category: "Achievement",
   },
   {
-    id: 4,
+    id: 6,
+    text: "I have high standards for myself and feel like I must be perfect.",
+    category: "Achievement",
+  },
+  {
+    id: 7,
     text: "I feel like I have to be the best at everything I do.",
     category: "Perfectionism",
   },
   {
-    id: 5,
+    id: 8,
+    text: "I feel like I have to be the best at everything I do.",
+    category: "Perfectionism",
+  },
+  {
+    id: 9,
     text: "I often feel anxious or worried about things that might go wrong.",
     category: "Entitlement",
   },
   {
-    id: 6,
+    id: 10,
+    text: "I often feel anxious or worried about things that might go wrong.",
+    category: "Entitlement",
+  },
+  {
+    id: 11,
     text: "I often feel tense or restless, even when there is no obvious reason.",
     category: "Omnipotence",
   },
   {
-    id: 7,
+    id: 12,
+    text: "I often feel tense or restless, even when there is no obvious reason.",
+    category: "Omnipotence",
+  },
+  {
+    id: 13,
+    text: "I feel like I have to be in control of everything to feel safe.",
+    category: "Autonomy",
+  },
+  {
+    id: 14,
     text: "I feel like I have to be in control of everything to feel safe.",
     category: "Autonomy",
   },
