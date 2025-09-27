@@ -59,9 +59,9 @@ export default function Quiz() {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="h-screen">
       <div className="min-h-screen flex items-center justify-center ">
-        <section className="w-full px-6 py-6 sm:py-10 bg-gradient-to-b from-background to-muted rounded-lg border border-accent flex">
-          <div className="max-w-xl w-full h-[300px] mx-auto p-6 text-center flex flex-col">
-            <p className="text-sm text-muted-foreground">
+        <section className="w-full md:w-2/3 px-6 py-6 sm:py-10 bg-gradient-to-b from-background to-muted rounded-lg border border-accent flex m-6">
+          <div className="max-w-4xl mx-auto p-6 text-center flex flex-col">
+            <p className="text-sm text-primary">
               Question {currentIndex + 1} of {questions.length}
             </p>
             {/* Question */}
@@ -78,7 +78,6 @@ export default function Quiz() {
               name={`responses.${currentIndex}.point`}
               rules={{ required: "Please select an option" }}
               render={({ field, fieldState }) => {
-                console.log({ field, fieldState });
                 return (
                   <div className="w-full">
                     <RadioGroup
