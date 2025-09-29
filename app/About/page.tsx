@@ -1,6 +1,6 @@
 import { BookOpen, Target, Lightbulb } from "lucide-react";
 
-export default function AboutSection() {
+export default function Page() {
   return (
     <section className="px-6 py-16 sm:py-24 bg-background">
       <div className="max-w-4xl mx-auto space-y-12">
