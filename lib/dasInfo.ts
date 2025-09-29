@@ -12,6 +12,14 @@ export type CategoryInfo = {
   bullets?: string[];
 };
 
+export const score = {
+  "-1": "Agree",
+  "-2": "Strongly Agree",
+  "0": "Neutral",
+  "1": "Disagree",
+  "2": "Strongly Disagree",
+};
+
 // Order you want to display on the page
 export const CATEGORY_ORDER: CategoryKey[] = [
   "Approval",

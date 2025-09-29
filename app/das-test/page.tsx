@@ -33,7 +33,8 @@ export default function Quiz() {
 
   const currentQuestion = questions[currentIndex];
 
-  const handleNext = async () => {
+  const handleNext = async (e?: React.MouseEvent) => {
+    e?.preventDefault();
     setHasAttemptedNext(true);
     const isValid = await trigger(`responses.${currentIndex}.point`);
     if (!isValid) return;
@@ -43,7 +44,8 @@ export default function Quiz() {
     }
   };
 
-  const handlePrevious = () => {
+  const handlePrevious = (e?: React.MouseEvent) => {
+    e?.preventDefault();
     if (currentIndex > 0) {
       setCurrentIndex((current) => current - 1);
     }

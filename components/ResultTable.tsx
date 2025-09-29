@@ -10,14 +10,9 @@ import { IGroupedByCategory } from "@/lib/types";
 
 interface ResultTableProps {
   groupedData?: IGroupedByCategory[];
-  categoryTotals: Record<string, number>;
 }
 
-export default function ResultTable({
-  categoryTotals,
-  groupedData,
-}: ResultTableProps) {
-  console.log({ categoryTotals, groupedData });
+export default function ResultTable({ groupedData }: ResultTableProps) {
   return (
     <div className="flex justify-center w-full my-10 p-3 lg:p-0">
       <div className="overflow-x-auto max-w-4xl w-full">
@@ -40,16 +35,16 @@ export default function ResultTable({
               </TableRow>
             </TableHeader>
             <TableBody>
-              {groupedData?.map((group, index) => (
+              {groupedData?.map((group) => (
                 <TableRow
                   className="border-b border-accent-foreground"
-                  key={index}
+                  key={group.category}
                 >
                   <TableCell className="border-r border-accent-foreground">
                     {group.category}
                   </TableCell>
                   <TableCell className="border-r border-accent-foreground">
-                    {`${group.QuestionTo} to ${group.QuestionFrom}`}
+                    {`${group.QuestionFrom} to ${group.QuestionTo}`}
                   </TableCell>
                   <TableCell className="border-r border-accent-foreground">
                     {group.IndividualScore.join(", ")}

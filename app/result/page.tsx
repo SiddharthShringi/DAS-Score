@@ -1,20 +1,23 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { useRouter } from "next/navigation";
 import { questions } from "@/lib/questions";
 import LineChartPage from "@/components/LineChartPage";
 import ResultInfo from "@/components/ResultInfo";
 import ResultTable from "@/components/ResultTable";
+import ScoreExplanation from "@/components/ScoreExplanation";
 import { IResponse, IMergedQuestion, IGroupedByCategory } from "@/lib/types";
 
 export default function Page() {
   const [parsedResponses, setParsedResponses] = useState<IResponse[]>([]);
+  const router = useRouter();
 
   useEffect(() => {
     try {
       const raw = localStorage.getItem("responses");
 
-      if (!raw) return;
+      if (!raw) router.push("/");
       const data = JSON.parse(raw);
       if (Array.isArray(data.responses)) {
         setParsedResponses(data.responses);
@@ -54,8 +57,8 @@ export default function Page() {
       items.sort((a, b) => a.id - b.id);
       results.push({
         category,
-        QuestionTo: items[0].id,
-        QuestionFrom: items[items.length - 1].id,
+        QuestionFrom: items[0].id,
+        QuestionTo: items[items.length - 1].id,
         IndividualScore: items.map((i) => i.point),
         TotalScore: items.reduce((sum, i) => sum + i.point, 0),
       });
@@ -81,26 +84,19 @@ export default function Page() {
     [categoryTotals]
   );
 
+  if (parsedResponses.length === 0) return null;
+
   return (
     <div className="lg:grid lg:grid-cols-12 lg:gap-6 text-foreground">
-      {/* Left: sticky chart pane */}
       <aside className="lg:col-span-5 lg:h-screen lg:sticky lg:top-0 lg:self-start p-4">
-        {/* Give the chart a fixed height so it doesn't push the pane taller than the viewport */}
         <div className="rounded-xl border p-4 my-10 border-foreground">
           <LineChartPage lineGraphData={lineGraphData} />
-          {/* If your LineChartPage doesn't accept height, wrap it in a div with a fixed h-[...] */}
-          {/* <div className="h-80"><LineChartPage ... /></div> */}
+          <ScoreExplanation merged={merged} />
         </div>
       </aside>
-
-      {/* Right: scrollable content pane */}
       <main className="lg:col-span-7 lg:h-screen lg:overflow-y-auto p-4 space-y-6">
-        <ResultTable
-          groupedData={groupedData}
-          categoryTotals={categoryTotals}
-        />
+        <ResultTable groupedData={groupedData} />
         <ResultInfo categoryTotals={categoryTotals} />
-        {/* Add more sections here; this column will scroll independently */}
       </main>
     </div>
   );

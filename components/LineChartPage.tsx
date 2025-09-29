@@ -16,7 +16,6 @@ type LineChartProps = {
 };
 
 export default function LineChartPage({ lineGraphData }: LineChartProps) {
-  console.log({ lineGraphData });
   return (
     <div className="flex justify-center">
       <div className="w-full max-w-[800px]">
