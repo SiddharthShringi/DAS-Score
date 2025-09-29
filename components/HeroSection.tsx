@@ -1,15 +1,19 @@
-// components/HeroSection.tsx
+"use client";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import WhatIsDas from "./WhatIsDAS";
 import Link from "next/link";
 
 export default function HeroSection() {
+  const handleTakeTest = () => {
+    localStorage.removeItem("responses");
+    localStorage.removeItem("responsesData");
+    window.location.href = "/das-test";
+  };
   return (
     <div>
       <section className="relative flex flex-col items-center justify-center text-center px-6 py-20 sm:py-28 bg-gradient-to-b from-background to-muted rounded-lg">
         <div className="max-w-3xl mx-auto space-y-6">
-          {/* Tagline */}
           <p className="text-sm font-medium tracking-wide text-primary uppercase">
             Understand Your Core Beliefs
           </p>
@@ -28,12 +32,14 @@ export default function HeroSection() {
 
           {/* CTA */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/das-test">
-              <Button size="lg" className="group cursor-pointer">
-                Take the Test
-                <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-              </Button>
-            </Link>
+            <Button
+              size="lg"
+              className="group cursor-pointer"
+              onClick={handleTakeTest}
+            >
+              Take the Test
+              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+            </Button>
             <Link href="/about">
               <Button
                 size="lg"
