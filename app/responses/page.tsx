@@ -22,7 +22,7 @@ export default function Page() {
       setResponsesData({});
       router.push("/");
     }
-  }, []);
+  }, [router]);
 
   const groupByCategory = (
     data: IMergedQuestion[]

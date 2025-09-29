@@ -17,7 +17,10 @@ export default function Page() {
     try {
       const raw = localStorage.getItem("responses");
 
-      if (!raw) router.push("/");
+      if (!raw) {
+        router.push("/");
+        return;
+      }
       const data = JSON.parse(raw);
       if (Array.isArray(data.responses)) {
         setParsedResponses(data.responses);
@@ -25,7 +28,7 @@ export default function Page() {
     } catch {
       setParsedResponses([]);
     }
-  }, []);
+  }, [router]);
 
   const answerById = useMemo<Record<string, number>>(
     () =>

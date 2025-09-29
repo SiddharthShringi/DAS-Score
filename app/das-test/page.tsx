@@ -72,8 +72,6 @@ export default function Quiz() {
                 {currentQuestion.text}
               </h2>
             </div>
-
-            {/* <RadioButtons /> */}
             <Controller
               key={currentIndex}
               control={control}
