@@ -8,7 +8,7 @@ export default function HeroSection() {
   const handleTakeTest = () => {
     localStorage.removeItem("responses");
     localStorage.removeItem("responsesData");
-    window.location.href = "/das-test";
+    window.location.href = "/quiz";
   };
   return (
     <div>
