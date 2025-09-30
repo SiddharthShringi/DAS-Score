@@ -28,10 +28,10 @@ export default function Page() {
             influence your thoughts, emotions, and decisions.
           </p>
           <p className="text-muted-foreground leading-relaxed">
-            The test in this app is adapted from Dr. David Burns’ classic
-            <strong> “The Feeling Good Handbook”</strong>, which has helped
-            millions challenge negative thought patterns and build emotional
-            resilience.
+            The test in based on{" "}
+            <strong>Dr. David Burns The Feeling Good Handbook</strong>, this
+            test invites you to explore the subtle thinking patterns and silent
+            assumptions influencing how you think and act.
           </p>
         </div>
 
